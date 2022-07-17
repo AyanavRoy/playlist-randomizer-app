@@ -14,7 +14,6 @@ app.use(express.json())
 mongoose.connect('mongodb://localhost:27017/login-mern-app')
 
 app.post('/api/register', async (req, res) => {
-	console.log(req.body)
 	try {
 		const newPassword = await bcrypt.hash(req.body.password, 10)
 		await User.create({
@@ -49,7 +48,7 @@ app.post('/api/login', async (req, res) => {
 			'secret123'
 		)
 
-		return res.json({ status: 'ok', user: token })
+		return res.json({ status: 'ok', user: token , email: req.body.email })
 	} else {
 		return res.json({ status: 'error', user: false })
 	}
@@ -65,7 +64,6 @@ app.get('/api/id', async (req, res) => {
 
 		return res.json({ status: 'ok', id: user.id })
 	} catch (error) {
-		console.log(error)
 		res.json({ status: 'error', error: 'invalid token' })
 	}
 })
@@ -83,7 +81,6 @@ app.post('/api/id', async (req, res) => {
 
 		return res.json({ status: 'ok' })
 	} catch (error) {
-		console.log(error)
 		res.json({ status: 'error', error: 'invalid token' })
 	}
 })

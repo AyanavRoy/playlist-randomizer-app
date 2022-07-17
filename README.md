@@ -5,8 +5,7 @@
 * Backend server manages encrypted account information and saves playlist IDs in MongoDB.
 * *Technologies Used: ReactJS, Node.js, Express.js, MongoDB, JWT, Bootstrap*
 
-![Screenshot of project](https://user-images.githubusercontent.com/36567631/179382046-dc9fd87a-0437-4382-ab7f-c1b5f67761ef.png)
-)
+<img width="1414" alt="Screenshot of app" src="https://user-images.githubusercontent.com/36567631/179399760-62a106b6-8804-4a11-9632-bf9640da5c13.png">
 
 ## How to Run
 1. Clone this repository.
